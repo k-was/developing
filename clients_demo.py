@@ -8,11 +8,11 @@ def listClient():
     for content in response['Contents']:
         print(content['Key'],content['LastModified'])
 
-        s3client.download_file(
-            Bucket='angus-pictures',
-            Key= content['Key'],
-            Filename= 'anguspic.png'
-        )
+        # s3client.download_file(
+        #     Bucket='angus-pictures',
+        #     Key= content['Key'],
+        #     Filename= 'anguspic.png'
+        # )
     return 
 
 
@@ -26,10 +26,10 @@ def listResource():
     for object in bucket.objects.all():
         print(object.key, object.last_modified)
 
-        bucket.download_file(
-            Key= object.key,
-            Filename= 'anguspic2.png'
-        )
+        # bucket.download_file(
+        #     Key= object.key,
+        #     Filename= 'anguspic2.png'
+        # )
     return 
 
 if __name__ == '__main__':
